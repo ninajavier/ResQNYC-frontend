@@ -20,7 +20,10 @@ const JoinUs = () => {
     backgroundCheckConsent: false,
   });
 
-  const textHandler = (e) => {};
+  const textHandler = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const checkBoxHandler = (e) => {};
 
