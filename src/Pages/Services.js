@@ -1,5 +1,5 @@
 import React from 'react'
-import CoolingMapModal from '../Components/CoolingMapModal'
+import CoolingMapModal from '../Components/EvacCentersModal'
 import EvacMapModal from '../Components/EvacMapModal'
 const Services = () => {
   return (
