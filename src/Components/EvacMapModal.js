@@ -68,47 +68,52 @@ const EvacMapModal = () => {
   return (
     <div>
       <div>
-        <div className='evac-sites-map-container' onClick={toggleModal}>
-          Show Nearest Evacuation Centers
-        </div>
+        <button className='evac-sites-map-container' onClick={toggleModal}>
+          {showModal ? 'Close' : 'Show Nearest Evacuation Centers'}
+        </button>
         {showModal && (
-          <div className="modal">
-            <MapContainer
-              center={[40.77485678097445, -73.8186225050414]}
-              zoom={12}
-              style={{ height: '400px', width: '50%' }}
-            >
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          <div className="modal-overlay">
+            <div className="modal-content">
+              <span className="modal-close" onClick={toggleModal}>
+                &times;
+              </span>
+              <MapContainer
+                center={[40.77485678097445, -73.8186225050414]}
+                zoom={12}
+                style={{ height: '400px', width: '50%' }}
+              >
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-              {userLocation && (
-                <Marker position={userLocation} icon={userLocationIcon}>
-                  <Popup>You are here</Popup>
-                </Marker>
-              )}
-
-              <GetUserLocation />
-
-              {data.map((item) => {
-                const geom = item.the_geom.slice(7, -1);
-                const [longitude, latitude] = geom.split(' ').map(parseFloat);
-
-                return (
-                  <Marker
-                    key={item.BIN}
-                    position={[latitude, longitude]}
-                    icon={customIcon}
-                  >
-                    <Popup>
-                      <div>
-                        <h3>{item.EC_Name}</h3>
-                        <p>{item.ADDRESS}</p>
-                        <p>{item.CITY}, {item.STATE} {item.ZIP_CODE}</p>
-                      </div>
-                    </Popup>
+                {userLocation && (
+                  <Marker position={userLocation} icon={userLocationIcon}>
+                    <Popup>You are here</Popup>
                   </Marker>
-                );
-              })}
-            </MapContainer>
+                )}
+
+                <GetUserLocation />
+
+                {data.map((item) => {
+                  const geom = item.the_geom.slice(7, -1);
+                  const [longitude, latitude] = geom.split(' ').map(parseFloat);
+
+                  return (
+                    <Marker
+                      key={item.BIN}
+                      position={[latitude, longitude]}
+                      icon={customIcon}
+                    >
+                      <Popup>
+                        <div>
+                          <h3>{item.EC_Name}</h3>
+                          <p>{item.ADDRESS}</p>
+                          <p>{item.CITY}, {item.STATE} {item.ZIP_CODE}</p>
+                        </div>
+                      </Popup>
+                    </Marker>
+                  );
+                })}
+              </MapContainer>
+            </div>
           </div>
         )}
       </div>
