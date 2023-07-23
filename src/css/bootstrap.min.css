@@ -4,6 +4,13 @@
   text-align: center; /* Center the text within the card */
 }
 
-#id {
+#containter-1,
+#containter-3 {
+  background-color: #89e58f;
   padding: 20px;
+}
+.learn-more-button {
+  background-color: #14ae5c;
+  color: aliceblue;
+  padding-left: 34px;
 }

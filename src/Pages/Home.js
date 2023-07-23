@@ -11,11 +11,15 @@ import {
   Card,
 } from "react-bootstrap";
 import LocationModal from "../Components/LocationModal";
+import Poll from "../Components/Poll";
 
 const Home = () => {
   return (
     <div>
-      <Container className="d-flex justify-content-center align-items-center vh-100">
+      <Container
+        id="containter-1"
+        className="d-flex justify-content-center align-items-center vh-100"
+      >
         <Row>
           <Col className="text-center">
             <h1>Welcome to ResQ NYC!</h1>
@@ -25,12 +29,15 @@ const Home = () => {
             </p>
             <Stack gap={2}>
               <Image src={nycWideShot} alt="nyc skyscrappers " thumbnail />
-              <Button variant="success"> Learn More</Button>
+              <Button className="learn-more-button" variant="success">
+                {" "}
+                Learn More
+              </Button>
             </Stack>
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container id="containter-2">
         <Row>
           <h2>Services We Provide</h2>
 
@@ -62,7 +69,10 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-      <Container bg=" "></Container>
+      <Container id="containter-3" bg="light">
+        <Card></Card>
+        <Poll></Poll>
+      </Container>
 
       <LocationModal />
     </div>
