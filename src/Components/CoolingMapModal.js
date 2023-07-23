@@ -4,6 +4,7 @@ const CoolingMapModal = () => {
   return (
     <div>
       <h1>This is the CoolingMap Component</h1>
+      <p>By bouroughs</p>
     </div>
   )
 }
