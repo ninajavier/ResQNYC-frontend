@@ -1,5 +1,6 @@
 import React from "react";
 import JoinUs from "../Components/JoinUs";
+import { Card } from "react-bootstrap";
 
 const About = () => {
   return (
