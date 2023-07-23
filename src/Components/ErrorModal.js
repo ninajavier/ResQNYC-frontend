@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { Link } from 'react-router-dom';
+import { Modal, Button } from 'react-bootstrap';
 
-const ErrorModal = () => {
+const ErrorModal = ({ show }) => {
   return (
-    <div>
-      <h1>Throws an Error Modal</h1>
-    </div>
-  )
-}
+      <Modal show={show}>
+          <Modal.Header>
+              <Modal.Title>Error</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Page not found!</Modal.Body>
+          <Modal.Footer>
+              <Link to="/">
+                  <Button variant="primary">
+                      Go to Home
+                  </Button>
+              </Link>
+          </Modal.Footer>
+      </Modal>
+  );
+};
 
-export default ErrorModal
+
+export default ErrorModal;

@@ -1,15 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 //Pages
 import About from './Pages/About';
 import Home from './Pages/Home';
 import CommunityHub from './Pages/CommunityHub';
 import Services from './Pages/Services';
-import Error from './Pages/Error';
+
 //Components
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 import Chatbot from './Components/Chatbot';
+import ErrorModal from './Components/ErrorModal';
 
 
 const App = () => {
@@ -24,7 +26,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/community-hub" element={<CommunityHub />} />
         <Route path="/services" element={<Services />} />
-        <Route path="*" element={<Error />} />
+        <Route path="*" element={<ErrorModal show={true} />} />
         </Routes>
       <Footer />
     </Router>
