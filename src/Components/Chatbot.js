@@ -10,7 +10,8 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const KEY = process.env.REACT_APP_API_KEY;
+const KEY = "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";
+console.log(KEY);
 
 export default function Chatbot() {
   const [typing, setTyping] = useState(false);
@@ -77,7 +78,7 @@ export default function Chatbot() {
           ...chatMessages,
           {
             message: data.choices[0].message.content,
-            sender: "ChatGTP",
+            sender: "ChatGPT",
           },
         ]);
         setTyping(false);
@@ -91,6 +92,7 @@ export default function Chatbot() {
       <MainContainer>
         <ChatContainer>
           <MessageList
+            style={{ maxHeight: "500px", overflowY: "auto" }}
             scrollBehavior="smooth"
             typingIndicator={
               typing ? <TypingIndicator content="ChatGPT is typing" /> : null
@@ -100,6 +102,7 @@ export default function Chatbot() {
               return <Message key={i} model={message} />;
             })}
           </MessageList>
+
           <MessageInput placeholder="Type here" onSend={handleOnSend} />
         </ChatContainer>
       </MainContainer>
