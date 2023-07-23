@@ -75,7 +75,7 @@ export default function Chatbot() {
         setMessages(
             [...chatMessages, {
                 message: data.choices[0].message.content,
-                sender: "ChatGTP"
+                sender: "ChatGPT"
             }]
         );
         setTyping(false);
