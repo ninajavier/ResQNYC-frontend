@@ -1,18 +1,17 @@
 import React from "react";
 import JoinUs from "../Components/JoinUs";
-import { Card, Container } from "react-bootstrap";
+import { Card, Container, Col, Row } from "react-bootstrap";
 
 const About = () => {
   return (
-    <Container>
-      <Container id="about-header">
-        <h1>About</h1>
-      </Container>
-      <Container id="vision-container">
-        <Card>
-          <row>
-            <h1>Our Vision</h1>
-          </row>
+    <Container fluid>
+      <Col noGutters={false}>
+        <Row padding="custom-padding-left" data-id="about-header">
+          <h1>About</h1>
+        </Row>
+        <Row data-id="vision-container">
+          <h2>Our Vision</h2>
+
           <row>
             <p>
               ResQNYC is driven by a heartfelt vision to protect and empower the
@@ -47,10 +46,24 @@ const About = () => {
               bring fear but serve as opportunities for strength and unity.
             </p>
           </row>
-        </Card>
-      </Container>
-      <Container id="team-story-container"></Container>
-      <Container id="meet-team-container"></Container>
+        </Row>
+        <Row data-id="team-story-container" className="justify-content-end">
+          <h2>Team Story</h2>
+          <p>
+            At Disaster Relief, our team is made up of dedicated individuals who
+            are passionate about making a difference in the lives of those
+            affected by disasters. Each member brings unique skills and
+            expertise to the table, allowing us to effectively coordinate and
+            respond to emergencies in New York City. Together, we work
+            tirelessly to ensure that our platform serves as a reliable resource
+            for the community, empowering individuals and organizations to come
+            together and provide support in times of crisis.
+          </p>
+        </Row>
+        <Row data-id="meet-team-container">
+          <h2>Meet The Team</h2>
+        </Row>
+      </Col>
     </Container>
   );
 };

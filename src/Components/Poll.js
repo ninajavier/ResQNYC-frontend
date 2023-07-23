@@ -25,10 +25,10 @@ function Poll() {
 
   return (
     <div>
-      <h3>Poll Question</h3>
+      <h2>Poll Question</h2>
       <ListGroup>
         {options.map((option) => (
-          <ListGroup.Item key={option.id}>
+          <ListGroup.Item key={option.id} className="mt-1">
             {option.text}
             <Button onClick={() => handleVote(option.id)}>Vote</Button>
             <span>Votes: {option.votes}</span>

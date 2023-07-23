@@ -1,5 +1,5 @@
 import React from "react";
-import nycWideShot from "../Assets/nycWideShot.png"; // Import the image
+import nycWideShot from "../Assets/nyc-1.jpeg"; // Import the image
 import "../css/bootstrap.min.css";
 import {
   Container,
@@ -16,34 +16,33 @@ import Poll from "../Components/Poll";
 const Home = () => {
   return (
     <div>
-      <Container
-        id="containter-1"
-        className="d-flex justify-content-center align-items-center vh-100"
-      >
+      <div id="containter-1" className="text-center mt-5 p-3">
+        <h1 className="mt-5"> Welcome to ResQ NYC! </h1>
+        <p>
+          We're here to connect emergency service in New York City with those
+          who need them.
+        </p>
+        <Image
+          className="mt-5"
+          src={nycWideShot}
+          width={500}
+          height="default"
+        />
+        <span></span>
+        <Button
+          className="learn-more-button d-block mx-auto mt-3"
+          variant="success"
+        >
+          {" "}
+          Learn More{" "}
+        </Button>
+      </div>
+      <div id="containter-2" className="p-3 mt-2 mb-2">
+        <h2 className="mb-2">Services We Provide</h2>
         <Row>
-          <Col className="text-center">
-            <h1>Welcome to ResQ NYC!</h1>
-            <p>
-              We're here to connect emergency service in New York City with
-              those who need them.
-            </p>
-            <Stack gap={2}>
-              <Image src={nycWideShot} alt="nyc skyscrappers " thumbnail />
-              <Button className="learn-more-button" variant="success">
-                {" "}
-                Learn More
-              </Button>
-            </Stack>
-          </Col>
-        </Row>
-      </Container>
-      <Container id="containter-2">
-        <Row>
-          <h2>Services We Provide</h2>
-
           <Col>
             <Stack gap={2}>
-              <Card className="custom-card" border="light" bg="light">
+              <Card className="custom-card mb-2" border="light" bg="light">
                 <Card.Title>
                   Nearest Evacuation Center during Hurricane Warning
                 </Card.Title>
@@ -55,7 +54,7 @@ const Home = () => {
           </Col>
           <Col>
             <Stack gap={2}>
-              <Card className="custom-card" border="light" bg="light">
+              <Card className="custom-card mb-2" border="light" bg="light">
                 <Card.Title>
                   Connect with Nearby NewYorkers during a Crisis{" "}
                 </Card.Title>
@@ -68,12 +67,12 @@ const Home = () => {
             </Stack>
           </Col>
         </Row>
-      </Container>
-      <Container id="containter-3" bg="light">
-        <Card></Card>
+      </div>
+      <div id="containter-3" className="p-3 mt-2 mb-2">
+        {" "}
+        {/* Added p-3 for padding */}
         <Poll></Poll>
-      </Container>
-
+      </div>
       <LocationModal />
     </div>
   );
