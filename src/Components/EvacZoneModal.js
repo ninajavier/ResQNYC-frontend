@@ -10,9 +10,10 @@ const EvacZoneModal = () => {
   return (
     <div>
       <div>
-        <button className={`evac-sites-map-container ${showEvacModal ? 'active' : ''}`} onClick={toggleEvacModal}>
-          Map of Evacuation Zones
+      <button className={`evac-sites-map-container ${showEvacModal ? 'active' : ''}`} onClick={toggleEvacModal}>
+          {showEvacModal ? 'Close' : 'Map of Evacuation Zones'}
         </button>
+
       </div>
       {showEvacModal && (
         <div className="modal-overlay">
