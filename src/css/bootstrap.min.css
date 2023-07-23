@@ -1,0 +1,9 @@
+.custom-card {
+  background-color: #be0c0c; /* Light gray background color */
+  padding: 20px; /* Adjust the padding as per your design */
+  text-align: center; /* Center the text within the card */
+}
+
+#id {
+  padding: 20px;
+}
