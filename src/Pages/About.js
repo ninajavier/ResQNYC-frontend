@@ -58,7 +58,6 @@ const About = () => {
             </p>
           </div>
         </div>
-        <JoinUs />
       </div>
       <JoinUs />
     </div>
