@@ -1,9 +1,9 @@
 import React from 'react'
-import { useState } from 'react';
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+// import { useState } from 'react';
+// import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const EvacMapModal = ({ data }) => {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   return (
     <div>
