@@ -1,15 +1,19 @@
 import React from "react";
 import JoinUs from "../Components/JoinUs";
-import { Card } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 
 const About = () => {
   return (
-    <div>
-      <div>
-        <div className="container">
-          <h1 className="text-center mb-5">About Us</h1>
-          <div className="our-vision">
-            <h2>Our Vision</h2>
+    <Container>
+      <Container id="about-header">
+        <h1>About</h1>
+      </Container>
+      <Container id="vision-container">
+        <Card>
+          <row>
+            <h1>Our Vision</h1>
+          </row>
+          <row>
             <p>
               ResQNYC is driven by a heartfelt vision to protect and empower the
               people of New York City in the face of natural disasters,
@@ -42,26 +46,12 @@ const About = () => {
               with the community, we envision a future where disasters no longer
               bring fear but serve as opportunities for strength and unity.
             </p>
-          </div>
-          <div className="team-story">
-            <h2>Team Story</h2>
-            <p>
-              Our team story revolves around a shared passion for making New
-              York City a safer place during natural disasters. Recognizing the
-              importance of quick access to crucial information, we integrated
-              CHATGPT, a live virtual assistant, into our platform. Our mission
-              is to provide New Yorkers with real-time guidance and essential
-              support during emergencies. With a collective effort, we strive to
-              empower the community with the tools they need to navigate crises
-              confidently. Our commitment remains steadfast, as we stand by New
-              Yorkers, offering them the assistance and reassurance they deserve
-              in times of uncertainty.
-            </p>
-          </div>
-        </div>
-      </div>
-      <JoinUs />
-    </div>
+          </row>
+        </Card>
+      </Container>
+      <Container id="team-story-container"></Container>
+      <Container id="meet-team-container"></Container>
+    </Container>
   );
 };
 

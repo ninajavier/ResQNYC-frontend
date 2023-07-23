@@ -1,5 +1,5 @@
 import React from "react";
-import nycWideShot from "../Assest/nycWideShot.png"; // Import the image
+import nycWideShot from "../Assets/nycWideShot.png"; // Import the image
 import "../css/bootstrap.min.css";
 import {
   Container,
