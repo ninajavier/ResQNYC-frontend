@@ -25,7 +25,7 @@ function Poll() {
 
   return (
     <div>
-      <h2>Poll Question</h2>
+      <h2>How Preapred is Your Household for a natural distatser?</h2>
       <ListGroup>
         {options.map((option) => (
           <ListGroup.Item key={option.id} className="mt-1">

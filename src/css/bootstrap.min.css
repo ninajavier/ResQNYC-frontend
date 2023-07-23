@@ -14,3 +14,8 @@
   color: aliceblue;
   padding-left: 34px;
 }
+
+.family {
+  border-radius: 50%; /* Creates the oval shape by making it a circle */
+  overflow: hidden; /* This ensures the image doesn't overflow outside the oval */
+}

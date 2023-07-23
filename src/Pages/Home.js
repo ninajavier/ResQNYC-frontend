@@ -1,5 +1,7 @@
 import React from "react";
 import nycWideShot from "../Assets/nyc-1.jpeg"; // Import the image
+import familyPic from "../Assets/black-family-1024x683.jpeg"; // Import the image
+
 import "../css/bootstrap.min.css";
 import {
   Container,
@@ -70,8 +72,16 @@ const Home = () => {
       </div>
       <div id="containter-3" className="p-3 mt-2 mb-2">
         {" "}
-        {/* Added p-3 for padding */}
-        <Poll></Poll>
+        <Row>
+          <Col md={6}>
+            {/* Image takes up 60% of the column (md={6}) */}
+            <Image className="family" src={familyPic} fluid />
+          </Col>
+          <Col md={6} className="d-flex align-items-center">
+            {/* Poll takes up 40% of the column (md={6}) */}
+            <Poll />
+          </Col>
+        </Row>
       </div>
       <LocationModal />
     </div>
