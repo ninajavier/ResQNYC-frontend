@@ -9,7 +9,7 @@ import Error from './Pages/Error';
 //Components
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
-
+import Chatbot from './Components/Chatbot';
 
 
 const App = () => {
@@ -17,6 +17,7 @@ const App = () => {
     <>
     <Router>
       <NavBar />
+      <Chatbot />
       <h1>hello welcome</h1>
         <Routes>
         <Route exact path="/" element={<Home />} />
