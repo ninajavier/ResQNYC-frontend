@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+/* app.css */
+
+/* Import the Climate Crisis font */
+@font-face {
+  font-family: 'Climate Crisis';
+  src: url('./fonts/ClimateCrisis.ttf') format('truetype');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Import the ITC Avant Garde Gothic font */
+@font-face {
+  font-family: 'ITC Avant Garde Gothic';
+  src: url('./fonts/ITCAvantGardeGothic.ttf') format('truetype');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ... other existing styles ... */
+
+/* Set the Climate Crisis font for Navbar title and Buttons */
+NavLink {
+  font-family: 'Climate Crisis', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  font-family: 'ITC Avant Garde Gothic', sans-serif;
+}
+/* app.css */
+/* ... (other styles) */
+
+.posts-container {
+  max-height: 400px; /* Set the maximum height for the posts container */
+  overflow-y: auto; /* Enable vertical scroll if the content overflows */
+  overflow-x: hidden; /* Hide horizontal scroll */
+  white-space: nowrap; /* Prevent the posts from wrapping to a new line */
+}
+
+/* Style the "Add New Post" button with floating and glowing effect */
+.floating-glow-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  background-color: var(--tart-orange);
   color: white;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+/* Add the glowing effect on hover */
+.floating-glow-button:hover {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+

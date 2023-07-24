@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../Assets/ResQNYC-Logo.png";
+import logo from "../assets/ResQNYC-Logo.png";
 
 const LoadingScreen = () => {
   const loadingScreenStyle = {
@@ -13,7 +13,7 @@ const LoadingScreen = () => {
     >
       <img src={logo} alt="Logo" width={200} height={200} />
 
-      <h3>NY Strong: Together We Thrive...</h3>
+      <h1>NY Strong: Together We Thrive...</h1>
     </div>
   );
 };

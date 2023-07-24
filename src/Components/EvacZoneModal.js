@@ -29,6 +29,7 @@ const EvacZoneModal = () => {
                 <button
                   type="button"
                   className="close"
+                  
                   onClick={toggleEvacModal}
                 >
                   <span aria-hidden="true">&times;</span>

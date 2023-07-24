@@ -5,12 +5,13 @@ import About from "./Pages/About";
 import Home from "./Pages/Home";
 import CommunityHub from "./Pages/CommunityHub";
 import Services from "./Pages/Services";
-import Error from "./Pages/Error";
+
 //Components
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import Chatbot from "./Components/Chatbot";
 import LoadingScreen from "./Components/LoadingScreen";
+import ErrorModal from './Components/ErrorModal';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +37,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/community-hub" element={<CommunityHub />} />
           <Route path="/services" element={<Services />} />
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<ErrorModal show={true} />} />
         </Routes>
         <Footer />
       </Router>

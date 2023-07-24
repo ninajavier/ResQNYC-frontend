@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Containter from "react-bootstrap/Container";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
@@ -10,16 +9,17 @@ import {
   MessageInput,
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
+import { Container } from "react-bootstrap"; // Import Container from React Bootstrap
 
 console.log(MainContainer);
-const KEY = "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";
+const KEY = process.env.REACT_APP_API_URL;
 console.log(KEY);
 
 export default function Chatbot() {
   const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState([
     {
-      message: "Hello",
+      message: "ResQ Bot works offline if you're caught in a Crisis--", 
       sender: "ChatGPT",
     },
   ]);
@@ -88,9 +88,9 @@ export default function Chatbot() {
   }
 
   return (
+    <Container fluid>
     <div>
-      <Containter>
-        <h1>ResQ NYC Caht Bot</h1>
+      <h1>ResQ Bot</h1>
 
         <MainContainer className="main-containter">
           <ChatContainer className="chat-containter rounded ">
@@ -108,7 +108,7 @@ export default function Chatbot() {
             <MessageInput clplaceholder="Type here" onSend={handleOnSend} />
           </ChatContainer>
         </MainContainer>
-      </Containter>
     </div>
-  );
+  </Container>
+);
 }

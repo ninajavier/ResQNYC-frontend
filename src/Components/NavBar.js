@@ -1,13 +1,25 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import logo from "../assets/ltngbolt.png";
+
 
 const NavBar = () => {
   return (
    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
       <LinkContainer to="/">
-        <Navbar.Brand>ResQ NYC</Navbar.Brand>
+      <Navbar.Brand style={{ display: "flex", alignItems: "center", marginLeft: "40px" }}>
+        <img
+          src={logo}
+          width="100"
+          height="100"
+          className="d-inline-block align-top"
+          alt="ResQ NYC logo"
+          style={{ marginRight: "10px" }} // Add margin-right to create space between the logo and navbar links
+        />
+        <span><h1>ResQ NYC</h1></span>
+      </Navbar.Brand>
       </LinkContainer>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">

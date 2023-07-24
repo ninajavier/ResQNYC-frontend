@@ -1,4 +1,27 @@
 # ResQNYC
+![logo](public/logo512.png)
+# Pitch: ResQ NYC - Empowering New Yorkers for Disaster Preparedness
+ResQ NYC is your ultimate disaster relief app, designed to equip New Yorkers with essential resources and support in times of crisis. Our app provides offline chat support, evacuation data, and vital services, ensuring you're well-prepared for emergencies.
+
+![comingsoon](src/assets/comingsoon.png)
+
+# Future High-Level Features:
+Real-time Drone Surveillance: Deploy drones for live monitoring and efficient rescue operations.
+Smart Emergency Alerts: AI-driven personalized alerts based on location and needs.
+Community Resilience Network: Connect neighbors and local businesses for mutual aid during emergencies.
+Augmented Reality Navigation: Safe navigation with AR overlays in disaster-affected areas.
+Smart Shelter Allocation: Optimize shelter distribution using data analytics.
+ResQ NYC Virtual Training: Interactive virtual training for disaster preparedness.
+Automated Resource Management: AI-powered resource distribution during emergencies.
+Eco-Friendly Disaster Solutions: Sustainable approaches for disaster relief.
+Crisis-Resistant Infrastructure: Build infrastructure to mitigate disaster impact.
+Resilience Gamification: Engage users in disaster preparedness through gamification.
+Join ResQ NYC and be part of the resilience revolution! Together, we'll make NYC a safer and more prepared city for all.
+
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

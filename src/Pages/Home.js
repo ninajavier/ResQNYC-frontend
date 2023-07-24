@@ -1,19 +1,10 @@
 import React from "react";
-import nycWideShot from "../Assets/nyc-1.jpeg";
-import familyPic from "../Assets/black-family-1024x683.jpeg";
+import nycWideShot from "../assets/nyc-1.jpeg";
+import familyPic from "../assets/black-family-1024x683.jpeg";
 import { Link } from "react-router-dom";
 
 import "../css/bootstrap.min.css";
-import {
-  Container,
-  Row,
-  Col,
-  Image,
-  Button,
-  Stack,
-  Card,
-} from "react-bootstrap";
-import LocationModal from "../Components/LocationModal";
+import { Container, Row, Col, Image, Button, Stack, Card } from "react-bootstrap";
 import Poll from "../Components/Poll";
 
 const Home = () => {
@@ -29,20 +20,14 @@ const Home = () => {
           We're here to connect emergency service in New York City with those
           who need them.
         </p>
-        <Image
-          src={nycWideShot}
-          width={500}
-          height="default"
-          className="mt-5"
-        />
+        <Image src={nycWideShot} width={500} height="auto" className="mt-5 mx-auto d-block" />
         <span></span>
         <Link to="/about">
           <Button
-            className="learn-more-button d-block text-center mx-auto mt-3"
+            className="learn-more-button d-block mx-auto mt-3"
             style={{ backgroundColor: "#331882" }}
           >
-            {" "}
-            Learn More{" "}
+            Learn More
           </Button>
         </Link>
       </div>
@@ -53,7 +38,7 @@ const Home = () => {
       >
         <h2 className="mb-2 text-center">Services We Provide</h2>
         <Row>
-          <Col>
+          <Col className="d-flex justify-content-center">
             <Stack gap={2}>
               <Card
                 className="custom-card pb-2 pt-2 text-center"
@@ -62,7 +47,7 @@ const Home = () => {
                 style={{ backgroundColor: "#b081dc" }}
               >
                 <Card.Title>
-                  Nearest Evacuation Center during Hurricane Warning
+                  Nearest Evacuation Center During Hurricane Warning
                 </Card.Title>
               </Card>
               <Card
@@ -75,7 +60,7 @@ const Home = () => {
               </Card>
             </Stack>
           </Col>
-          <Col>
+          <Col className="d-flex justify-content-center">
             <Stack gap={2}>
               <Card
                 className="custom-card pb-2 pt-2 text-center"
@@ -84,7 +69,7 @@ const Home = () => {
                 style={{ backgroundColor: "#8b62aa" }}
               >
                 <Card.Title>
-                  Connect with Nearby New Yorkers during a Crisis
+                  Connect With Nearby New Yorkers During a Crisis
                 </Card.Title>
               </Card>
               <Card
@@ -94,7 +79,7 @@ const Home = () => {
                 style={{ backgroundColor: "#8b62aa" }}
               >
                 <Card.Title>
-                  AI Virtual Assistance for support during distress
+                  AI Virtual Assistance for Support During distress
                 </Card.Title>
               </Card>
             </Stack>
@@ -103,19 +88,18 @@ const Home = () => {
       </div>
       <div
         id="container-3"
-        className="p-3 "
+        className="p-3 text-center"
         style={{ backgroundColor: "#fdf0d5", color: "#D81E5B" }}
       >
-        <Row>
+        <Row className="align-items-center">
           <Col md={6}>
             <Image className="family" src={familyPic} fluid />
           </Col>
-          <Col md={6} className="d-flex align-items-center">
+          <Col md={6}>
             <Poll />
           </Col>
         </Row>
       </div>
-      <LocationModal />
     </div>
   );
 };

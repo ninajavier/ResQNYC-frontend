@@ -1,11 +1,11 @@
 import React from "react";
 import JoinUs from "../Components/JoinUs";
-import laura from "../Assets/HeadShots/laura.png";
-import nina from "../Assets/HeadShots/nina.jpg";
-import cephus from "../Assets/HeadShots/cephus.jpg";
-import keri from "../Assets/HeadShots/Keri.jpg";
-import together from "../Assets/together.png";
-import hurricane from "../Assets/hurricane.png";
+import laura from "../assets/HeadShots/laura.png";
+import nina from "../assets/HeadShots/nina.jpg";
+import cephus from "../assets/HeadShots/cephus.jpg";
+import keri from "../assets/HeadShots/Keri.jpg";
+import together from "../assets/together.png";
+import hurricane from "../assets/hurricane.png";
 import { Card, Container, Col, Row } from "react-bootstrap";
 
 const About = () => {
@@ -95,9 +95,9 @@ const About = () => {
           <Col md={3}>
             <Card>
               <Card.Body>
-                <Card.Title>Christina Cephus</Card.Title>
-                <Card.Img src={cephus} />
-                <Card.Text>
+              <Card.Title className="text-center">Christina Cephus</Card.Title>
+              <Card.Img src={cephus} style={{ height: "auto", width: "100%" }} />
+              <Card.Text className="text-center"><h1>Project Manager</h1>
                   Christina Cephus is a highly motivated tech designer and
                   full-stack web developer with a passion for tackling modern
                   technical challenges with pragmatic creativity. Currently
@@ -112,9 +112,9 @@ const About = () => {
           <Col md={3}>
             <Card>
               <Card.Body>
-                <Card.Title>Nina Javier</Card.Title>
-                <Card.Img src={nina} />
-                <Card.Text>
+              <Card.Title className="text-center">Nina Javier</Card.Title>
+              <Card.Img src={nina} style={{ height: "auto", width: "100%" }} />
+              <Card.Text className="text-center"><h1>Technical Lead</h1>
                   Nina is a software developer who is currently learning and
                   evolving her skills at Pursuit. With a strong interest in
                   nature, she enjoys exploring all aspects of it, from bugs and
@@ -128,9 +128,9 @@ const About = () => {
           <Col md={3}>
             <Card>
               <Card.Body>
-                <Card.Title>Laura Williams</Card.Title>
-                <Card.Img src={laura} />
-                <Card.Text>
+              <Card.Title className="text-center">Laura Williams</Card.Title>
+              <Card.Img src={laura} style={{ height: "auto", width: "100%" }} />
+              <Card.Text className="text-center"><h1>Design Lead</h1>
                   Laura is an aspiring web developer currently studying at
                   Pursuit. She possesses a strong passion for fitness and
                   problem-solving, and she is intrigued by the transformative
@@ -141,10 +141,10 @@ const About = () => {
           </Col>
           <Col md={3}>
             <Card>
-              <Card.Body>
-                <Card.Title>Keri Emmanuel</Card.Title>
-                <Card.Img src={keri} />
-                <Card.Text>
+            <Card.Body>
+              <Card.Title className="text-center">Keri Emmanuel</Card.Title>
+              <Card.Img src={keri} style={{ height: "auto", width: "100%" }} />
+              <Card.Text className="text-center"><h1>Demo Lead</h1>
                   Keri is a technology enthusiast and aspiring programmer who is
                   currently pursuing studies to become a skilled software
                   developer. With over five years of experience in diverse

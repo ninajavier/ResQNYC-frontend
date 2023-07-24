@@ -4,8 +4,8 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
-import icon from "../Assets/map-pin.png";
-import userIcon from "../Assets/user-location.png";
+import icon from "../assets/map-pin.png";
+import userIcon from "../assets/user-location.png";
 
 const API = "https://data.cityofnewyork.us/resource/h2bn-gu9k.json";
 
