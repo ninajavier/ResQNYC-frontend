@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import L from 'leaflet';
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import L from "leaflet";
 
-import 'leaflet/dist/leaflet.css';
-import icon from '../Assets/map-pin.png';
-import userIcon from '../Assets/user-location.png';
+import "leaflet/dist/leaflet.css";
+import icon from "../Assets/map-pin.png";
+import userIcon from "../Assets/user-location.png";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -25,7 +25,7 @@ const EvacMapModal = () => {
         const response = await axios.get(`${API}/data`);
         setData(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
     fetchData();
@@ -49,7 +49,7 @@ const EvacMapModal = () => {
     const map = useMap();
 
     useEffect(() => {
-      map.locate().on('locationfound', (e) => {
+      map.locate().on("locationfound", (e) => {
         setUserLocation(e.latlng);
         if (firstLocationUpdateRef.current) {
           map.flyTo(e.latlng, 15);
@@ -57,8 +57,8 @@ const EvacMapModal = () => {
         }
       });
 
-      map.locate().on('locationerror', () => {
-        console.error('Error getting location');
+      map.locate().on("locationerror", () => {
+        console.error("Error getting location");
       });
     }, [map]);
 
@@ -67,56 +67,91 @@ const EvacMapModal = () => {
 
   return (
     <div>
+      <h2>Evacuation Centers</h2>
       <div>
-        <button className='evac-sites-map-container' onClick={toggleModal}>
-          {showModal ? 'Close' : 'Show Nearest Evacuation Centers'}
+        <button
+          className={`evac-sites-map-container btn btn-primary btn-block ${
+            showModal ? "active" : ""
+          }`}
+          onClick={toggleModal}
+        >
+          {showModal ? "Close" : "Show Nearest Evacuation Centers"}
         </button>
         {showModal && (
           <div className="modal-overlay">
-            <div className="modal-content">
-              <span className="modal-close" onClick={toggleModal}>
-                &times;
-              </span>
-              <MapContainer
-                center={[40.77485678097445, -73.8186225050414]}
-                zoom={12}
-                style={{ height: '400px', width: '50%' }}
-              >
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title">Nearest Evacuation Centers</h5>
+                  <button type="button" className="close" onClick={toggleModal}>
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div className="modal-body">
+                  <MapContainer
+                    center={[40.77485678097445, -73.8186225050414]}
+                    zoom={12}
+                    style={{ height: "400px", width: "100%" }}
+                  >
+                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-                {userLocation && (
-                  <Marker position={userLocation} icon={userLocationIcon}>
-                    <Popup>You are here</Popup>
-                  </Marker>
-                )}
+                    {userLocation && (
+                      <Marker position={userLocation} icon={userLocationIcon}>
+                        <Popup>You are here</Popup>
+                      </Marker>
+                    )}
 
-                <GetUserLocation />
+                    <GetUserLocation />
 
-                {data.map((item) => {
-                  const geom = item.the_geom.slice(7, -1);
-                  const [longitude, latitude] = geom.split(' ').map(parseFloat);
+                    {data.map((item) => {
+                      const geom = item.the_geom.slice(7, -1);
+                      const [longitude, latitude] = geom
+                        .split(" ")
+                        .map(parseFloat);
 
-                  return (
-                    <Marker
-                      key={item.BIN}
-                      position={[latitude, longitude]}
-                      icon={customIcon}
-                    >
-                      <Popup>
-                        <div>
-                          <h3>{item.EC_Name}</h3>
-                          <p>{item.ADDRESS}</p>
-                          <p>{item.CITY}, {item.STATE} {item.ZIP_CODE}</p>
-                        </div>
-                      </Popup>
-                    </Marker>
-                  );
-                })}
-              </MapContainer>
+                      return (
+                        <Marker
+                          key={item.BIN}
+                          position={[latitude, longitude]}
+                          icon={customIcon}
+                        >
+                          <Popup>
+                            <div>
+                              <h3>{item.EC_Name}</h3>
+                              <p>{item.ADDRESS}</p>
+                              <p>
+                                {item.CITY}, {item.STATE} {item.ZIP_CODE}
+                              </p>
+                            </div>
+                          </Popup>
+                        </Marker>
+                      );
+                    })}
+                  </MapContainer>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={toggleModal}
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         )}
       </div>
+      <p>
+        Evacuation Centers are designated facilities established by authorities
+        to provide temporary shelter and support for individuals and families
+        during emergency situations that necessitate evacuations. These centers
+        are activated in response to various emergencies, such as natural
+        disasters (e.g., hurricanes, floods, wildfires), industrial incidents,
+        or other events that pose a threat to the safety and well-being of
+        residents in specific areas.
+      </p>
     </div>
   );
 };
