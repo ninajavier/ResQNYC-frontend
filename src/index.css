@@ -15,31 +15,14 @@ body {
 }
 
 /* Style the components to appear floating with glowing shadow */
-.Post {
+.Post,
+.PostForm,
+.CommentForm,
+.Comment,
+.MainContainer,
+.ChatContainer {
   margin: 20px;
   padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-}
-
-.PostForm {
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-}
-
-.CommentForm {
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-}
-
-.Comment {
-  margin: 10px 0;
-  padding: 10px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
@@ -66,26 +49,28 @@ body {
   color: var(--tart-orange);
 }
 
-/* Style the buttons */
-.Button {
-  background-color: var(--ruby);
-  color: white;
+/* Style the buttons with custom colors */
+.Button,
+.btn {
   font-weight: bold;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .edit-button {
-  background-color: var(--tart-orange);
+  background-color: var(--tart-orange); /* Use Tart Orange color for Edit button */
+  color: white;
 }
 
 .delete-button {
-  background-color: var(--dark-purple);
+  background-color: var(--dark-purple); /* Use Dark Purple color for Delete button */
+  color: white;
 }
 
-/* Add the glowing effect on hover */
+/* Add the glowing effect on hover for the buttons */
 .Button:hover,
 .edit-button:hover,
-.delete-button:hover {
+.delete-button:hover,
+.btn:hover {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -96,15 +81,42 @@ body {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Style the Bootstrap Button component */
-.btn {
-  background-color: var(--dark-purple);
-  color: white;
-  font-weight: bold;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+/* Chatbot styling */
+.MainContainer,
+.ChatContainer {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Add the glowing effect on hover for Bootstrap Button */
-.btn:hover {
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+.Message {
+  background-color: var(--opal);
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.MessageInput {
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Rest of the CSS styles remain unchanged */
+
+body {
+  margin: 0;
+  font-family: 'Victor Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h4, h5, h6, p {
+  font-family: 'Soulway Demo', 'Soulway Shadow';
+  color: rgb(213, 204, 136);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }

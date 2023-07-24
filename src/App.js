@@ -12,16 +12,13 @@ import Comments from './Components/Comments';//And the Comments page here
 //Components
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
-import Chatbot from './Components/Chatbot';
 import ErrorModal from './Components/ErrorModal';
 
 const App = () => {
   return (
     <>
       <Router>
-        <NavBar />
-        <Chatbot />
-        <h1>hello welcome</h1>
+        <NavBar /> 
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

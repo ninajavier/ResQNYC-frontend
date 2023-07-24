@@ -9,6 +9,7 @@ import {
   MessageInput,
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
+import { Container } from "react-bootstrap"; // Import Container from React Bootstrap
 
 const KEY = "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";
 console.log(KEY);
@@ -86,8 +87,9 @@ export default function Chatbot() {
   }
 
   return (
+    <Container fluid>
     <div>
-      <h1>Chat feature</h1>
+      <h1>ResQ Bot</h1>
 
       <MainContainer>
         <ChatContainer>
@@ -107,5 +109,6 @@ export default function Chatbot() {
         </ChatContainer>
       </MainContainer>
     </div>
-  );
+  </Container>
+);
 }

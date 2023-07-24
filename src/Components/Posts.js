@@ -33,13 +33,13 @@ function Posts() {
   };
 
   return (
-    <Container className="Posts-horizontal-scroll">
+    <Container className="py-4"> {/* Added padding under the navbar */}
       <Button
         onClick={handleClick}
         variant="primary"
         style={{
-          backgroundColor: "#800080",
-          fontFamily: "Syne",
+          backgroundColor: "#C6D8D3",
+          fontFamily: "Soulway Demo",
           boxShadow: "0px 0px 20px #800080",
           fontSize: "1.2rem",
         }}
@@ -51,7 +51,7 @@ function Posts() {
           <h5>Add a New Post</h5>
         </PostForm>
       )}
-      <div className="posts-container">
+      <div className="posts-container d-flex flex-wrap justify-content-center"> {/* Centering the posts */}
         {posts.map((post) => (
           <Post
             key={post.id}

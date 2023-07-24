@@ -12,13 +12,14 @@ const NavBar = () => {
       <Navbar.Brand>
           <img
             src={logo}
-            width="30"
-            height="30"
+            width="100"
+            height="100"
             className="d-inline-block align-top"
             alt="ResQ NYC logo"
-          />{' '}
-          ResQ NYC
-        </Navbar.Brand>
+            style={{ marginLeft: '40px' }}
+            />
+            <span><h1>ResQ NYC</h1></span>
+          </Navbar.Brand>
       </LinkContainer>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
