@@ -67,58 +67,83 @@ const CoolingMapModal = () => {
 
   return (
     <div>
+      <h2>Cooling Sites</h2>
       <div>
-        <button className="cooling-sites-map-container" onClick={toggleModal}>
+        <button className="btn btn-primary btn-block" onClick={toggleModal}>
           {showModal ? "Close" : "Show Nearest Cooling Sites"}
         </button>
         {showModal && (
           <div className="modal-overlay">
-            <div className="modal-content">
-              <span className="modal-close" onClick={toggleModal}>
-                &times;
-              </span>
-              <MapContainer
-                center={[40.77485678097445, -73.8186225050414]}
-                zoom={12}
-                style={{ height: "400px", width: "50%" }}
-              >
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title">Nearest Cooling Sites</h5>
+                  <button type="button" className="close" onClick={toggleModal}>
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div className="modal-body">
+                  <MapContainer
+                    center={[40.77485678097445, -73.8186225050414]}
+                    zoom={12}
+                    style={{ height: "400px", width: "100%" }}
+                  >
+                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-                {userLocation && (
-                  <Marker position={userLocation} icon={userLocationIcon}>
-                    <Popup>You are here</Popup>
-                  </Marker>
-                )}
+                    {userLocation && (
+                      <Marker position={userLocation} icon={userLocationIcon}>
+                        <Popup>You are here</Popup>
+                      </Marker>
+                    )}
 
-                <GetUserLocation />
+                    <GetUserLocation />
 
-                {data.map((item) => {
-                  const latitude = parseFloat(item.y);
-                  const longitude = parseFloat(item.x);
+                    {data.map((item) => {
+                      const latitude = parseFloat(item.y);
+                      const longitude = parseFloat(item.x);
 
-                  return (
-                    <Marker
-                      key={item.omppropid}
-                      position={[latitude, longitude]}
-                      icon={customIcon}
-                    >
-                      <Popup>
-                        <div>
-                          <h3>{item.propertyname}</h3>
-                          <p>{item.featuretype}</p>
-                          <p>
-                            {item.borough}, {item.district}
-                          </p>
-                        </div>
-                      </Popup>
-                    </Marker>
-                  );
-                })}
-              </MapContainer>
+                      return (
+                        <Marker
+                          key={item.omppropid}
+                          position={[latitude, longitude]}
+                          icon={customIcon}
+                        >
+                          <Popup>
+                            <div>
+                              <h3>{item.propertyname}</h3>
+                              <p>{item.featuretype}</p>
+                              <p>
+                                {item.borough}, {item.district}
+                              </p>
+                            </div>
+                          </Popup>
+                        </Marker>
+                      );
+                    })}
+                  </MapContainer>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={toggleModal}
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         )}
       </div>
+      <p>
+        Cooling Sites are designated locations, often provided by the city or
+        local authorities, where individuals can go to seek relief from extreme
+        heat during heatwaves or hot weather events. These sites are equipped
+        with amenities to help people stay cool and hydrated, especially for
+        vulnerable populations, such as the elderly, children, and those without
+        access to air conditioning.
+      </p>
     </div>
   );
 };
