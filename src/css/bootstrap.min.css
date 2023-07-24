@@ -1,0 +1,41 @@
+#containter-1,
+#containter-3 {
+  background-color: #89e58f;
+  padding: 20px;
+}
+.learn-more-button {
+  background-color: #14ae5c;
+  color: aliceblue;
+  padding-left: 34px;
+}
+
+.family {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.our-vision-header {
+  font-size: 36px;
+  color: #ff9505;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.team-story-header {
+  color: #ff9505;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+
+  margin-bottom: 20px;
+}
+
+.meet-team-header {
+  color: #ff9505;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-bottom: 20px;
+}
