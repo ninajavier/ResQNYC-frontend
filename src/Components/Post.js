@@ -36,7 +36,7 @@ function Post({ post, handleDelete, handleEdit }) {
               <p>{post.content}</p>
             </Col>
           </div>
-          <Button variant="success" onClick={toggleView} className="edit-button"
+          {/* <Button variant="success" onClick={toggleView} className="edit-button"
            style={{
             backgroundColor: "#C6D8D3",
             fontFamily: "Soulway Demo",
@@ -44,17 +44,8 @@ function Post({ post, handleDelete, handleEdit }) {
             fontSize: "1.2rem",
           }}>
             Edit this Post
-          </Button>
-          <Button variant="danger" onClick={() => handleDelete(post.id)} className="delete-button"
-           style={{
-            margin:"10px",
-            backgroundColor: "#C6D8D3",
-            fontFamily: "Soulway Demo",
-            boxShadow: "0px 0px 20px #800080",
-            fontSize: "1.2rem",
-          }}>
-            Delete
-          </Button>
+          </Button> */}
+     
         </Card.Body>
       </Card>
     </div>
