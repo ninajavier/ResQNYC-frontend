@@ -1,13 +1,24 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import logo from "../assets/ltngbolt.png";
+
 
 const NavBar = () => {
   return (
    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
       <LinkContainer to="/">
-        <Navbar.Brand>ResQ NYC</Navbar.Brand>
+      <Navbar.Brand>
+          <img
+            src={logo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="ResQ NYC logo"
+          />{' '}
+          ResQ NYC
+        </Navbar.Brand>
       </LinkContainer>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">

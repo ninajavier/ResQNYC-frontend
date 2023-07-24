@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import pursuitLogo from "../assets/pursuit.png"
 import { Container, Row, Col } from 'react-bootstrap';
 
 const OurFooter = () => {
@@ -10,6 +12,15 @@ const OurFooter = () => {
         </Col>
         <Col md={2} className="text-center">
           <a href="https://github.com/theCephusHasLanded" className="text-light">Developer Christina</a>
+        </Col>
+        <Col md={2} className="text-center">
+          <h2>Copyright 2023</h2>
+        </Col>
+        <Col md={2} className="text-center">
+          <Link to="https://www.pursuit.org/" className="text-white">
+            Built in
+            <img src={pursuitLogo} alt="Pursuit Logo" height="40" />
+          </Link>
         </Col>
         <Col md={2} className="text-center">
           <a href="https://github.com/keriarmstrong" className="text-light">Developer Keri</a>
