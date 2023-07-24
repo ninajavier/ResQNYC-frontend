@@ -37,6 +37,7 @@ function Posts() {
       <Button
         onClick={handleClick}
         variant="primary"
+        align="center"
         style={{
           backgroundColor: "#C6D8D3",
           fontFamily: "Soulway Demo",

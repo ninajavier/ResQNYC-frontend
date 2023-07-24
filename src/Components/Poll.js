@@ -25,7 +25,7 @@ function Poll() {
 
   return (
     <div>
-      <h2>How Prepared is Your Household for a natural disaster?</h2>
+      <h2>How Prepared Is Your Household for A Natural Disaster?</h2>
       <ListGroup>
         {options.map((option) => (
           <ListGroup.Item
@@ -38,9 +38,10 @@ function Poll() {
               onClick={() => handleVote(option.id)}
               style={{ backgroundColor: "#331882" }}
               className="ml-2"
-            >
-              Vote
+            >Vote<br></br>
+              
             </Button>
+            <br></br>
             <span style={{ color: "#F0544F" }}>Votes: {option.votes}</span>
           </ListGroup.Item>
         ))}

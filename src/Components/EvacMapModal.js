@@ -74,6 +74,7 @@ const EvacMapModal = () => {
             showModal ? "active" : ""
           }`}
           onClick={toggleModal}
+
         >
           {showModal ? "Close" : "Show Nearest Evacuation Centers"}
         </button>
@@ -83,8 +84,15 @@ const EvacMapModal = () => {
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title">Nearest Evacuation Centers</h5>
-                  <button type="button" className="close" onClick={toggleModal}>
+                  <button type="button"   style={{
+          backgroundColor: "#C6D8D3",
+          fontFamily: "Soulway Demo",
+          boxShadow: "0px 0px 20px #800080",
+          fontSize: "1.2rem",
+        }}
+        className="close" onClick={toggleModal}>
                     <span aria-hidden="true">&times;</span>
+                    
                   </button>
                 </div>
                 <div className="modal-body">
