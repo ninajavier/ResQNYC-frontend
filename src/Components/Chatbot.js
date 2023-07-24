@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Containter from "react-bootstrap/Container";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
@@ -11,6 +12,7 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import { Container } from "react-bootstrap"; // Import Container from React Bootstrap
 
+console.log(MainContainer);
 const KEY = "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";
 console.log(KEY);
 
@@ -91,23 +93,23 @@ export default function Chatbot() {
     <div>
       <h1>ResQ Bot</h1>
 
-      <MainContainer>
-        <ChatContainer>
-          <MessageList
-            style={{ maxHeight: "500px", overflowY: "auto" }}
-            scrollBehavior="smooth"
-            typingIndicator={
-              typing ? <TypingIndicator content="ChatGPT is typing" /> : null
-            }
-          >
-            {messages.map((message, i) => {
-              return <Message key={i} model={message} />;
-            })}
-          </MessageList>
-
-          <MessageInput placeholder="Type here" onSend={handleOnSend} />
-        </ChatContainer>
-      </MainContainer>
+        <MainContainer className="main-containter">
+          <ChatContainer className="chat-containter rounded ">
+            <MessageList
+              style={{ maxHeight: "500px", overflowY: "auto" }}
+              scrollBehavior="smooth"
+              typingIndicator={
+                typing ? <TypingIndicator content="ChatGPT is typing" /> : null
+              }
+            >
+              {messages.map((message, i) => {
+                return <Message key={i} model={message} />;
+              })}
+            </MessageList>
+            <MessageInput clplaceholder="Type here" onSend={handleOnSend} />
+          </ChatContainer>
+        </MainContainer>
+      </Container>
     </div>
   </Container>
 );
