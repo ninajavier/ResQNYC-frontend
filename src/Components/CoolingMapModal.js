@@ -7,9 +7,9 @@ import "leaflet/dist/leaflet.css";
 import icon from "../assets/map-pin.png";
 import userIcon from "../assets/user-location.png";
 
-const API = process.env.REACT_APP_API_URL;
+const API = "https://data.cityofnewyork.us/resource/h2bn-gu9k.json";
 
-const EvacMapModal = () => {
+const CoolingMapModal = () => {
   const [showModal, setShowModal] = useState(false);
   const [data, setData] = useState([]);
   const [userLocation, setUserLocation] = useState(null);
@@ -22,7 +22,7 @@ const EvacMapModal = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${API}/data`);
+        const response = await axios.get(API);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -67,22 +67,17 @@ const EvacMapModal = () => {
 
   return (
     <div>
-      <h2>Evacuation Centers</h2>
+      <h2>Cooling Sites</h2>
       <div>
-        <button
-          className={`evac-sites-map-container btn btn-primary btn-block ${
-            showModal ? "active" : ""
-          }`}
-          onClick={toggleModal}
-        >
-          {showModal ? "Close" : "Show Nearest Evacuation Centers"}
+        <button className="btn btn-primary btn-block" onClick={toggleModal}>
+          {showModal ? "Close" : "Show Nearest Cooling Sites"}
         </button>
         {showModal && (
           <div className="modal-overlay">
             <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h5 className="modal-title">Nearest Evacuation Centers</h5>
+                  <h5 className="modal-title">Nearest Cooling Sites</h5>
                   <button type="button" className="close" onClick={toggleModal}>
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -104,23 +99,21 @@ const EvacMapModal = () => {
                     <GetUserLocation />
 
                     {data.map((item) => {
-                      const geom = item.the_geom.slice(7, -1);
-                      const [longitude, latitude] = geom
-                        .split(" ")
-                        .map(parseFloat);
+                      const latitude = parseFloat(item.y);
+                      const longitude = parseFloat(item.x);
 
                       return (
                         <Marker
-                          key={item.BIN}
+                          key={item.omppropid}
                           position={[latitude, longitude]}
                           icon={customIcon}
                         >
                           <Popup>
                             <div>
-                              <h3>{item.EC_Name}</h3>
-                              <p>{item.ADDRESS}</p>
+                              <h3>{item.propertyname}</h3>
+                              <p>{item.featuretype}</p>
                               <p>
-                                {item.CITY}, {item.STATE} {item.ZIP_CODE}
+                                {item.borough}, {item.district}
                               </p>
                             </div>
                           </Popup>
@@ -144,16 +137,15 @@ const EvacMapModal = () => {
         )}
       </div>
       <p>
-        Evacuation Centers are designated facilities established by authorities
-        to provide temporary shelter and support for individuals and families
-        during emergency situations that necessitate evacuations. These centers
-        are activated in response to various emergencies, such as natural
-        disasters (e.g., hurricanes, floods, wildfires), industrial incidents,
-        or other events that pose a threat to the safety and well-being of
-        residents in specific areas.
+        Cooling Sites are designated locations, often provided by the city or
+        local authorities, where individuals can go to seek relief from extreme
+        heat during heatwaves or hot weather events. These sites are equipped
+        with amenities to help people stay cool and hydrated, especially for
+        vulnerable populations, such as the elderly, children, and those without
+        access to air conditioning.
       </p>
     </div>
   );
 };
 
-export default EvacMapModal;
+export default CoolingMapModal;

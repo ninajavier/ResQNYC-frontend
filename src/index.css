@@ -111,8 +111,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h4, h5, h6, p {
+h1, h2, h4, h5, h6 {
   font-family: 'Soulway Demo', 'Soulway Shadow';
+  color: rgb(213, 204, 136);
+}
+p {
+  font-family: '', 'Soulway Shadow';
   color: rgb(213, 204, 136);
 }
 
