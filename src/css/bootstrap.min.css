@@ -1,9 +1,3 @@
-.custom-card {
-  background-color: #be0c0c; /* Light gray background color */
-  padding: 20px; /* Adjust the padding as per your design */
-  text-align: center; /* Center the text within the card */
-}
-
 #containter-1,
 #containter-3 {
   background-color: #89e58f;
@@ -16,6 +10,32 @@
 }
 
 .family {
-  border-radius: 50%; /* Creates the oval shape by making it a circle */
-  overflow: hidden; /* This ensures the image doesn't overflow outside the oval */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.our-vision-header {
+  font-size: 36px;
+  color: #ff9505;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.team-story-header {
+  color: #ff9505;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+
+  margin-bottom: 20px;
+}
+
+.meet-team-header {
+  color: #ff9505;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-bottom: 20px;
 }

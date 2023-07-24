@@ -25,17 +25,28 @@ function Poll() {
 
   return (
     <div>
-      <h2>How Preapred is Your Household for a natural distatser?</h2>
+      <h2>How Prepared is Your Household for a natural disaster?</h2>
       <ListGroup>
         {options.map((option) => (
-          <ListGroup.Item key={option.id} className="mt-1">
+          <ListGroup.Item
+            key={option.id}
+            className="mt-1"
+            style={{ backgroundColor: "#C6D8D3", color: "#331882" }}
+          >
             {option.text}
-            <Button onClick={() => handleVote(option.id)}>Vote</Button>
-            <span>Votes: {option.votes}</span>
+            <Button
+              onClick={() => handleVote(option.id)}
+              style={{ backgroundColor: "#331882" }}
+              className="ml-2"
+            >
+              Vote
+            </Button>
+            <span style={{ color: "#F0544F" }}>Votes: {option.votes}</span>
           </ListGroup.Item>
         ))}
       </ListGroup>
     </div>
   );
 }
+
 export default Poll;

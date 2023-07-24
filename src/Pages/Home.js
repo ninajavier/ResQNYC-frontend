@@ -1,6 +1,7 @@
 import React from "react";
 import nycWideShot from "../Assets/nyc-1.jpeg";
 import familyPic from "../Assets/black-family-1024x683.jpeg";
+import { Link } from "react-router-dom";
 
 import "../css/bootstrap.min.css";
 import {
@@ -21,7 +22,7 @@ const Home = () => {
       <div
         id="container-1"
         className="text-center mt-5 p-3"
-        style={{ backgroundColor: "#6671e7", color: "#fff" }}
+        style={{ backgroundColor: "#fdf0d5", color: "#D81E5B" }}
       >
         <h1 className="mt-5">Welcome to ResQ NYC!</h1>
         <p>
@@ -35,24 +36,27 @@ const Home = () => {
           className="mt-5"
         />
         <span></span>
-        <Button
-          className="learn-more-button d-block mx-auto mt-3"
-          variant="success"
-        >
-          Learn More
-        </Button>
+        <Link to="/about">
+          <Button
+            className="learn-more-button d-block text-center mx-auto mt-3"
+            style={{ backgroundColor: "#331882" }}
+          >
+            {" "}
+            Learn More{" "}
+          </Button>
+        </Link>
       </div>
       <div
         id="container-2"
-        className="p-3 mt-2 mb-2"
-        style={{ backgroundColor: "#f1696e", color: "#fff" }}
+        className="pt-5 pb-5"
+        style={{ backgroundColor: "#C6D8D3", color: "#fff" }}
       >
-        <h2 className="mb-2">Services We Provide</h2>
+        <h2 className="mb-2 text-center">Services We Provide</h2>
         <Row>
           <Col>
             <Stack gap={2}>
               <Card
-                className="custom-card mb-2"
+                className="custom-card pb-2 pt-2 text-center"
                 border="light"
                 bg="light"
                 style={{ backgroundColor: "#b081dc" }}
@@ -62,7 +66,7 @@ const Home = () => {
                 </Card.Title>
               </Card>
               <Card
-                className="custom-card"
+                className="custom-card pb-2 pt-2 text-center"
                 border="light"
                 bg="light"
                 style={{ backgroundColor: "#b081dc" }}
@@ -74,7 +78,7 @@ const Home = () => {
           <Col>
             <Stack gap={2}>
               <Card
-                className="custom-card mb-2"
+                className="custom-card pb-2 pt-2 text-center"
                 border="light"
                 bg="light"
                 style={{ backgroundColor: "#8b62aa" }}
@@ -84,7 +88,7 @@ const Home = () => {
                 </Card.Title>
               </Card>
               <Card
-                className="custom-card"
+                className="custom-card pb-2 pt-2 text-center"
                 border="light"
                 bg="light"
                 style={{ backgroundColor: "#8b62aa" }}
@@ -99,8 +103,8 @@ const Home = () => {
       </div>
       <div
         id="container-3"
-        className="p-3 mt-2 mb-2"
-        style={{ backgroundColor: "#ededed", color: "#734f89" }}
+        className="p-3 "
+        style={{ backgroundColor: "#fdf0d5", color: "#D81E5B" }}
       >
         <Row>
           <Col md={6}>
