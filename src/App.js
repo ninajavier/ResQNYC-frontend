@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 //Pages
 import About from "./Pages/About";
@@ -10,8 +10,20 @@ import Error from "./Pages/Error";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import Chatbot from "./Components/Chatbot";
+import LoadingScreen from "./Components/LoadingScreen";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
   return (
     <>
       <Router>
